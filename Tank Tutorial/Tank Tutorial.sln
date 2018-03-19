@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tank Tutorial.Plugins", "Tank Tutorial.Plugins.csproj", "{5E751C7F-661B-C710-4493-3BFF759334DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tank Tutorial", "Tank Tutorial.csproj", "{06D34073-DD18-B2A4-22AF-B750E4A4FB6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tank Tutorial.Editor.Plugins", "Tank Tutorial.Editor.Plugins.csproj", "{A84E0F3A-6DC1-B7D9-BC6A-17FF168AC472}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tank Tutorial.Editor", "Tank Tutorial.Editor.csproj", "{DF5C5CA6-7FB8-9F78-4074-FCF1042A68A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E751C7F-661B-C710-4493-3BFF759334DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E751C7F-661B-C710-4493-3BFF759334DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E751C7F-661B-C710-4493-3BFF759334DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E751C7F-661B-C710-4493-3BFF759334DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06D34073-DD18-B2A4-22AF-B750E4A4FB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06D34073-DD18-B2A4-22AF-B750E4A4FB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06D34073-DD18-B2A4-22AF-B750E4A4FB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06D34073-DD18-B2A4-22AF-B750E4A4FB6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A84E0F3A-6DC1-B7D9-BC6A-17FF168AC472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A84E0F3A-6DC1-B7D9-BC6A-17FF168AC472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A84E0F3A-6DC1-B7D9-BC6A-17FF168AC472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A84E0F3A-6DC1-B7D9-BC6A-17FF168AC472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF5C5CA6-7FB8-9F78-4074-FCF1042A68A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF5C5CA6-7FB8-9F78-4074-FCF1042A68A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF5C5CA6-7FB8-9F78-4074-FCF1042A68A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF5C5CA6-7FB8-9F78-4074-FCF1042A68A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
