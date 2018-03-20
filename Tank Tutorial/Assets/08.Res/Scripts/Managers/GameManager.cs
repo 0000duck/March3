@@ -12,12 +12,10 @@ public class GameManager : MonoBehaviour
     public Text m_MessageText;              
     public GameObject[] m_TankPrefab;         
     public TankManager[] m_Tanks;
-<<<<<<< HEAD
     public int m_ChosenTank;
     public GameObject m_TankSelect;
     public bool isTankSelected = false;
-=======
->>>>>>> parent of 365930d... 탱크: NGUI, AI 적용 전 단계
+
 
 
     private int m_RoundNumber;              
@@ -64,7 +62,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < m_Tanks.Length; i++)
         {
             m_Tanks[i].m_Instance =
-                Instantiate(m_TankPrefab[2], m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
+                Instantiate(m_TankPrefab[m_ChosenTank], m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
             m_Tanks[i].m_PlayerNumber = i + 1;
             m_Tanks[i].Setup();
         }
