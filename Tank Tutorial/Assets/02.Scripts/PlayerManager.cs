@@ -3,23 +3,22 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
-    public int m_NumRoundsToWin = 5;        
-    public float m_StartDelay = 3f;         
-    public float m_EndDelay = 3f;           
-    public CameraControl m_CameraControl;   
-    public Text m_MessageText;              
+    public int m_NumRoundsToWin = 5;
+    public float m_StartDelay = 3f;
+    public float m_EndDelay = 3f;
+    public CameraControl m_CameraControl;
+    public Text m_MessageText;
     public GameObject[] m_TankPrefab;
     public TankManager[] m_Tanks;
-    public GameObject m_PlayerTank;
     public int m_ChosenTank;
     public GameObject m_TankSelect;
     public GameObject m_PlayPanel;
 
-    private int m_RoundNumber;              
-    private WaitForSeconds m_StartWait;     
-    private WaitForSeconds m_EndWait;       
+    private int m_RoundNumber;
+    private WaitForSeconds m_StartWait;
+    private WaitForSeconds m_EndWait;
     private TankManager m_RoundWinner;
     private TankManager m_GameWinner;
     private bool isTankSelected = false;
@@ -28,46 +27,50 @@ public class GameManager : MonoBehaviour
     {
         m_StartWait = new WaitForSeconds(m_StartDelay);
         m_EndWait = new WaitForSeconds(m_EndDelay);
-       
+
         StartCoroutine(GameStart());
     }
 
     private IEnumerator GameStart()
-    {        
+    {
         m_MessageText.text = "TANKS!";
         m_PlayPanel.SetActive(false);
         yield return m_StartWait;
 
-        ShowTankSelect();       
+        ShowTankSelect();
     }
 
     public void ButtonClickToStart()
     {
         m_TankSelect.SetActive(false);
-        SpawnAllTanks();
+        SpawnPlayerTank();
         SetCameraTargets();
         StartCoroutine(GameLoop());
     }
 
     private void ShowTankSelect()
-    {      
+    {
         m_ChosenTank = -1;
         m_MessageText.text = "\n\n\n\n" + "SELECT TANK!";
         m_TankSelect.SetActive(true);
     }
 
 
-    private void SpawnAllTanks()
+    private void SpawnPlayerTank()
     {
-        //for (int i = 0; i < m_Tanks.Length; i++)
-        //{
-        //    m_Tanks[i].m_Instance =
-        //        Instantiate(m_TankPrefab[m_ChosenTank], m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
-        //    m_Tanks[i].m_PlayerNumber = i + 1;
-        //    m_Tanks[i].Setup();
-        //}
+        //플레이어 1과 플레이어 2를 생성하고 플레이어넘버를 부여하던 코드
 
+        for (int i = 0; i < m_Tanks.Length; i++)
+        {
+            m_Tanks[i].m_Instance =
+                Instantiate(m_TankPrefab[m_ChosenTank], m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
+            m_Tanks[i].m_PlayerNumber = i + 1;
+            m_Tanks[i].Setup();
+        }
 
+        //m_Tanks[0].m_Instance = Instantiate(m_TankPrefab[m_ChosenTank], m_Tanks[0].m_SpawnPoint.position, m_Tanks[0].m_SpawnPoint.rotation) as GameObject;
+        //m_Tanks[0].m_PlayerNumber = 1;
+        //m_Tanks[0].Setup();
     }
 
 
@@ -85,7 +88,7 @@ public class GameManager : MonoBehaviour
 
 
     private IEnumerator GameLoop()
-    {        
+    {
         yield return StartCoroutine(RoundStarting());
         yield return StartCoroutine(RoundPlaying());
         yield return StartCoroutine(RoundEnding());
@@ -105,7 +108,7 @@ public class GameManager : MonoBehaviour
     {
         ResetAllTanks();
         DisableTankControl();
-        
+
 
         m_CameraControl.SetStartPositionAndSize();
 
@@ -125,7 +128,7 @@ public class GameManager : MonoBehaviour
         while (!OneTankLeft())
         {
             yield return null;
-        }        
+        }
     }
 
 
@@ -239,7 +242,7 @@ public class GameManager : MonoBehaviour
     public void ChooseLightTank()
     {
         m_ChosenTank = 0;
-      
+
         isTankSelected = true;
     }
 

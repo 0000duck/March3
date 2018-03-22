@@ -81,6 +81,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\02.Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\02.Scripts\StickLimiter.cs" />
     <Compile Include="Assets\02.Scripts\TankMovementJoystick.cs" />
     <Compile Include="Assets\02.Scripts\TankShootingButton.cs" />
     <Compile Include="Assets\08.Res\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
