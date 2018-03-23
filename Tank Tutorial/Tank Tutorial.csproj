@@ -81,7 +81,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\02.Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\02.Scripts\GameManager.cs" />
     <Compile Include="Assets\02.Scripts\StickLimiter.cs" />
     <Compile Include="Assets\02.Scripts\TankMovementJoystick.cs" />
     <Compile Include="Assets\02.Scripts\TankShootingButton.cs" />
@@ -267,7 +267,7 @@
     <Compile Include="Assets\08.Res\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\08.Res\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\08.Res\Scripts\Camera\CameraControl.cs" />
-    <Compile Include="Assets\08.Res\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\08.Res\Scripts\Managers\GameManagerOld.cs" />
     <Compile Include="Assets\08.Res\Scripts\Managers\TankManager.cs" />
     <Compile Include="Assets\08.Res\Scripts\Shell\ShellExplosion.cs" />
     <Compile Include="Assets\08.Res\Scripts\Tank\TankHealth.cs" />

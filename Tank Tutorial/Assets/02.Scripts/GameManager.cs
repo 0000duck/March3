@@ -3,18 +3,19 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public int m_NumRoundsToWin = 5;
     public float m_StartDelay = 3f;
     public float m_EndDelay = 3f;
     public CameraControl m_CameraControl;
     public Text m_MessageText;
-    public GameObject[] m_TankPrefab;
+    public GameObject[] m_TankList;
     public TankManager[] m_Tanks;
     public int m_ChosenTank;
     public GameObject m_TankSelect;
     public GameObject m_PlayPanel;
+    public GameObject m_EnemyTank;
 
     private int m_RoundNumber;
     private WaitForSeconds m_StartWait;
@@ -44,6 +45,7 @@ public class PlayerManager : MonoBehaviour
     {
         m_TankSelect.SetActive(false);
         SpawnPlayerTank();
+        SpawnEnemyTank();
         SetCameraTargets();
         StartCoroutine(GameLoop());
     }
@@ -58,19 +60,28 @@ public class PlayerManager : MonoBehaviour
 
     private void SpawnPlayerTank()
     {
-        //플레이어 1과 플레이어 2를 생성하고 플레이어넘버를 부여하던 코드
+        int playerNumber = 0;
+        Debug.Log("PlayerSpawn");
+        m_TankList[m_ChosenTank].SetActive(true);
+        m_TankList[m_ChosenTank].transform.position = new Vector3(m_Tanks[playerNumber].m_SpawnPoint.position.x, m_Tanks[playerNumber].m_SpawnPoint.position.y, m_Tanks[playerNumber].m_SpawnPoint.position.z);
+        m_TankList[m_ChosenTank].transform.rotation = 
+            new Quaternion(m_Tanks[playerNumber].m_SpawnPoint.rotation.x, m_Tanks[playerNumber].m_SpawnPoint.rotation.y, m_Tanks[playerNumber].m_SpawnPoint.rotation.z, m_Tanks[playerNumber].m_SpawnPoint.rotation.w);
+        m_Tanks[playerNumber].m_Instance = m_TankList[m_ChosenTank];
+        m_Tanks[playerNumber].m_PlayerNumber = playerNumber + 1;
+        m_Tanks[playerNumber].Setup();
+    }
 
-        for (int i = 0; i < m_Tanks.Length; i++)
-        {
-            m_Tanks[i].m_Instance =
-                Instantiate(m_TankPrefab[m_ChosenTank], m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
-            m_Tanks[i].m_PlayerNumber = i + 1;
-            m_Tanks[i].Setup();
-        }
-
-        //m_Tanks[0].m_Instance = Instantiate(m_TankPrefab[m_ChosenTank], m_Tanks[0].m_SpawnPoint.position, m_Tanks[0].m_SpawnPoint.rotation) as GameObject;
-        //m_Tanks[0].m_PlayerNumber = 1;
-        //m_Tanks[0].Setup();
+    private void SpawnEnemyTank()
+    {
+        int EnemyNumber = 1;
+        Debug.Log("EnemySpawn");
+        m_EnemyTank.SetActive(true);
+        m_EnemyTank.transform.position = new Vector3(m_Tanks[EnemyNumber].m_SpawnPoint.position.x, m_Tanks[EnemyNumber].m_SpawnPoint.position.y, m_Tanks[EnemyNumber].m_SpawnPoint.position.z);
+        m_EnemyTank.transform.rotation = 
+            new Quaternion(m_Tanks[EnemyNumber].m_SpawnPoint.rotation.x, m_Tanks[EnemyNumber].m_SpawnPoint.rotation.y, m_Tanks[EnemyNumber].m_SpawnPoint.rotation.z, m_Tanks[EnemyNumber].m_SpawnPoint.rotation.w);
+        m_Tanks[EnemyNumber].m_Instance = m_EnemyTank;
+        m_Tanks[EnemyNumber].m_PlayerNumber = EnemyNumber + 1;
+        m_Tanks[EnemyNumber].Setup();
     }
 
 

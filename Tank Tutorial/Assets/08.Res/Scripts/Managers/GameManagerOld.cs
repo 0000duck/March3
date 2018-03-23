@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManagerOld : MonoBehaviour
 {
     public int m_NumRoundsToWin = 5;        
     public float m_StartDelay = 3f;         
@@ -59,15 +59,13 @@ public class GameManager : MonoBehaviour
 
     private void SpawnAllTanks()
     {
-        //for (int i = 0; i < m_Tanks.Length; i++)
-        //{
-        //    m_Tanks[i].m_Instance =
-        //        Instantiate(m_TankPrefab[m_ChosenTank], m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
-        //    m_Tanks[i].m_PlayerNumber = i + 1;
-        //    m_Tanks[i].Setup();
-        //}
-
-
+        for (int i = 0; i < m_Tanks.Length; i++)
+        {
+            m_Tanks[i].m_Instance =
+                Instantiate(m_TankPrefab[m_ChosenTank], m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
+            m_Tanks[i].m_PlayerNumber = i + 1;
+            m_Tanks[i].Setup();
+        }
     }
 
 
