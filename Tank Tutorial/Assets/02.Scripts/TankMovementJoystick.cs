@@ -18,10 +18,6 @@ public class TankMovementJoystick : MonoBehaviour {
     private float m_xValue;
     private float m_zValue;
 
-    //private string m_MovementAxisName;
-    //private string m_TurnAxisName;
-    //private float m_MovementInputValue;
-    //private float m_TurnInputValue;
     private float m_OriginalPitch;
 
     private void Awake()
