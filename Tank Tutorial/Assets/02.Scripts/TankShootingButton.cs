@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TankShootingButton : MonoBehaviour {
 
-    public bool m_ReadyToFire = true;
+    private bool m_ReadyToFire = true;
 
     public int m_PlayerNumber = 1;
     //private string m_FireButton;
@@ -46,7 +46,7 @@ public class TankShootingButton : MonoBehaviour {
             {
                 case true:
                     m_ReadyToFire = false;
-                    Debug.Log("Press!");
+                    //Debug.Log("Press!");
 
                     m_CurrentLaunchForce = m_MinLaunchForce;
 
@@ -56,7 +56,7 @@ public class TankShootingButton : MonoBehaviour {
                     break;
                 case false:
                     m_ReadyToFire = true;
-                    Debug.Log("Fire!");
+                    //Debug.Log("Fire!");
 
                     Fire();
                     Reload();
@@ -78,7 +78,7 @@ public class TankShootingButton : MonoBehaviour {
 
         if (!m_ReadyToFire)
         {
-            Debug.Log("Charging!");
+            //Debug.Log("Charging!");
 
             m_CurrentLaunchForce += m_ChargeSpeed * Time.deltaTime;
 

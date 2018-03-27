@@ -61,7 +61,6 @@ public class GameManager : MonoBehaviour
     private void SpawnPlayerTank()
     {
         int playerNumber = 0;
-        Debug.Log("PlayerSpawn");
         m_TankList[m_ChosenTank].SetActive(true);
         m_TankList[m_ChosenTank].transform.position = new Vector3(m_Tanks[playerNumber].m_SpawnPoint.position.x, m_Tanks[playerNumber].m_SpawnPoint.position.y, m_Tanks[playerNumber].m_SpawnPoint.position.z);
         m_TankList[m_ChosenTank].transform.rotation = 
@@ -74,7 +73,6 @@ public class GameManager : MonoBehaviour
     private void SpawnEnemyTank()
     {
         int EnemyNumber = 1;
-        Debug.Log("EnemySpawn");
         m_EnemyTank.SetActive(true);
         m_EnemyTank.transform.position = new Vector3(m_Tanks[EnemyNumber].m_SpawnPoint.position.x, m_Tanks[EnemyNumber].m_SpawnPoint.position.y, m_Tanks[EnemyNumber].m_SpawnPoint.position.z);
         m_EnemyTank.transform.rotation = 

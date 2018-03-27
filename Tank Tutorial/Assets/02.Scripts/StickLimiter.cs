@@ -5,35 +5,34 @@ using UnityEngine;
 public class StickLimiter : MonoBehaviour {
     private float yPos;
     private float xPos;
-    public float yLimit = 150f;
-    public float xLimit = 150f;
+    public float limit = 150f;
 
 	void Start () {
         
 	}
 	
 	void Update () {
-        yPos = transform.position.y;
-        xPos = transform.position.x;
+        yPos = transform.localPosition.y;
+        xPos = transform.localPosition.x;
 
-        if (yPos >= yLimit)
+        if (yPos >= limit)
         {            
-            transform.position = new Vector3(transform.position.x, yLimit, 0f);
+            transform.localPosition = new Vector3(transform.localPosition.x, limit, 0f);
         }
 
-        if (xPos >= xLimit)
+        if (xPos >= limit)
         {
-            transform.position = new Vector3(xLimit, transform.position.y, 0f);
+            transform.localPosition = new Vector3(limit, transform.localPosition.y, 0f);
         }
 
-        if (yPos <= -yLimit)
+        if (yPos <= -limit)
         {
-            transform.position = new Vector3(transform.position.x, yLimit, 0f);
+            transform.localPosition = new Vector3(transform.localPosition.x, -limit, 0f);
         }
 
-        if (xPos <= -xLimit)
+        if (xPos <= -limit)
         {
-            transform.position = new Vector3(xLimit, transform.position.y, 0f);
+            transform.localPosition = new Vector3(-limit, transform.localPosition.y, 0f);
         }
     }
 }
