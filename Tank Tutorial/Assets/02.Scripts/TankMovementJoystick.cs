@@ -31,7 +31,7 @@ public class TankMovementJoystick : MonoBehaviour {
     }
 
     private void OnEnable()
-    {
+    {        
         m_Rigidbody.isKinematic = false;
         //m_MovementInputValue = 0f;
         //m_TurnInputValue = 0f;
@@ -39,6 +39,7 @@ public class TankMovementJoystick : MonoBehaviour {
 
     private void OnDisable()
     {
+        m_Joystick.transform.localPosition = new Vector3(0, 0, 0);
         m_Rigidbody.isKinematic = true;
     }
 

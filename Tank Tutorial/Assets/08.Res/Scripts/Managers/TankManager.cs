@@ -15,6 +15,7 @@ public class TankManager
     //private TankMovement m_Movement;
     //private TankMovementJoystick m_Movement;
     //private TankShooting m_Shooting;
+    private EnemyAI m_Ai;
     private GameObject m_CanvasGameObject;
 
 
@@ -24,9 +25,12 @@ public class TankManager
         //m_Movement = m_Instance.GetComponent<TankMovementJoystick>();
         //m_Shooting = m_Instance.GetComponent<TankShooting>();
         m_CanvasGameObject = m_Instance.GetComponentInChildren<Canvas>().gameObject;
-
         //m_Movement.m_PlayerNumber = m_PlayerNumber;
         //m_Shooting.m_PlayerNumber = m_PlayerNumber;
+        if (m_PlayerNumber == 2)
+        {
+            m_Ai = m_Instance.GetComponent<EnemyAI>();
+        }
 
         m_ColoredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(m_PlayerColor) + ">PLAYER " + m_PlayerNumber + "</color>";
 
@@ -43,6 +47,10 @@ public class TankManager
     {
         //m_Movement.enabled = false;
         //m_Shooting.enabled = false;
+        if (m_PlayerNumber == 2)
+        {
+            m_Ai.enabled = false;
+        }
 
         m_CanvasGameObject.SetActive(false);
     }
@@ -52,6 +60,10 @@ public class TankManager
     {
         //m_Movement.enabled = true;
         //m_Shooting.enabled = true;
+        if (m_PlayerNumber == 2)
+        {
+            m_Ai.enabled = true;
+        }
 
         m_CanvasGameObject.SetActive(true);
     }
