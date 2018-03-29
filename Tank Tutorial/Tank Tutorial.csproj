@@ -86,6 +86,7 @@
     <Compile Include="Assets\02.Scripts\StickLimiter.cs" />
     <Compile Include="Assets\02.Scripts\TankMovementJoystick.cs" />
     <Compile Include="Assets\02.Scripts\TankShootingButton.cs" />
+    <Compile Include="Assets\08.Res\BrokenVector\LowPolySurvivalEssentials\Example\Scripts\AnimatedFire.cs" />
     <Compile Include="Assets\08.Res\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
     <Compile Include="Assets\08.Res\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
     <Compile Include="Assets\08.Res\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -296,6 +297,7 @@
     <Compile Include="Assets\08.Res\_Completed-Assets\Scripts\UI\UIDirectionControl.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\08.Res\BrokenVector\LowPolyShaders\Shaders\LowPolyPBRShader.shader" />
     <None Include="Assets\08.Res\Fonts\Bowlby_One\OFL.txt" />
     <None Include="Assets\08.Res\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
     <None Include="Assets\08.Res\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
