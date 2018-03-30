@@ -72,10 +72,12 @@ public class TankMovementJoystick : MonoBehaviour {
         if (m_xValue == 0f && m_zValue == 0f)
         {
             transform.rotation = transform.rotation;
+            m_Rigidbody.isKinematic = true;
         }
         else
         {
             transform.LookAt(new Vector3(m_xValue, 0f, m_zValue));
+            m_Rigidbody.isKinematic = false;
         }
     }
 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 3be55b17303e3af4a946293440bf2201
+timeCreated: 1522375141
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Hollywood Capital
+  fontNames:
+  - Hollywood Capital
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

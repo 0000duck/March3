@@ -10,7 +10,9 @@ public class TankShootingButton : MonoBehaviour {
     public int m_PlayerNumber = 1;
     //private string m_FireButton;
 
+    public Rigidbody[] m_ShellList;
     public Rigidbody m_Shell;
+    public Transform[] m_FireTransformList;
     public Transform m_FireTransform;
     public Slider m_AimSlider;
     public AudioSource m_ShootingAudio;
@@ -93,7 +95,6 @@ public class TankShootingButton : MonoBehaviour {
         }  
     }
 
-
     private void OnEnable()
     {
         m_CurrentLaunchForce = m_MinLaunchForce;
@@ -121,5 +122,26 @@ public class TankShootingButton : MonoBehaviour {
     {
         reloadTime = m_ReloadTime;
         m_ReloadIcon.SetActive(true);
+    }
+
+    public void ChooseLightTankShell()
+    {
+        int i = 0;
+        m_Shell = m_ShellList[i];
+        m_FireTransform = m_FireTransformList[i];
+    }
+
+    public void ChooseNormalTankShell()
+    {
+        int i = 1;
+        m_Shell = m_ShellList[i];
+        m_FireTransform = m_FireTransformList[i];
+    }
+
+    public void ChooseHeavyTankShell()
+    {
+        int i = 2;
+        m_Shell = m_ShellList[i];
+        m_FireTransform = m_FireTransformList[i];
     }
 }

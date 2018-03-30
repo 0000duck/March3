@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public class TankHealth : MonoBehaviour
@@ -9,7 +10,7 @@ public class TankHealth : MonoBehaviour
     public Color m_FullHealthColor = Color.green;  
     public Color m_ZeroHealthColor = Color.red;    
     public GameObject m_ExplosionPrefab;
-    
+    public Rigidbody m_Rigidbody;
     
     private AudioSource m_ExplosionAudio;          
     private ParticleSystem m_ExplosionParticles;   
@@ -25,6 +26,10 @@ public class TankHealth : MonoBehaviour
         m_ExplosionParticles.gameObject.SetActive(false);
     }
 
+    private void Start()
+    {
+        m_Rigidbody = GetComponent<Rigidbody>();
+    }
 
     private void OnEnable()
     {
@@ -34,6 +39,12 @@ public class TankHealth : MonoBehaviour
         SetHealthUI();
     }
     
+    private IEnumerator GetStable()
+    {
+        yield return new WaitForSeconds(3f);
+        m_Rigidbody.isKinematic = true;
+        m_Rigidbody.isKinematic = false;
+    }
 
     public void TakeDamage(float amount)
     {
@@ -46,6 +57,8 @@ public class TankHealth : MonoBehaviour
         {
             OnDeath();
         }
+
+        StartCoroutine(GetStable());
     }
 
 

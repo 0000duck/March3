@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GameStart()
     {
-        m_MessageText.text = "TANKS!";
+        m_MessageText.text = "TANK TIME!";
         m_PlayPanel.SetActive(false);
         yield return m_StartWait;
 
